@@ -61,8 +61,25 @@ export default function Home() {
   );
 }
 
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface TestimonialCardProps {
+  name: string;
+  message: string;
+  avatar: string;
+}
+
+interface FAQCardProps {
+  question: string;
+  answer: string;
+}
+
 // FeatureCard Component
-function FeatureCard({ title, description, icon }) {
+function FeatureCard({ title, description, icon }: FeatureCardProps) {
   return (
     <div className="w-full md:w-1/3 p-4">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
@@ -74,7 +91,7 @@ function FeatureCard({ title, description, icon }) {
   );
 }
 
-function Testimonial({ name, message, avatar }) {
+function Testimonial({ name, message, avatar }: TestimonialCardProps) {
   return (
     <div className="w-full md:w-1/3 p-4">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
@@ -87,7 +104,7 @@ function Testimonial({ name, message, avatar }) {
 }
 
 
-function FAQ({ question, answer }) {
+function FAQ({ question, answer }: FAQCardProps) {
   return (
     <div className="mb-8">
       <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">{question}</h3>
